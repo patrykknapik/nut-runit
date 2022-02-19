@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+/usr/bin/upsd -c stop
+/usr/bin/upsdrvctl stop

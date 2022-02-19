@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+mkdir -p /run/nut
+touch /run/nut/upsd.pid
+chown nut:nut /run/nut/upsd.pid
+/usr/bin/upsdrvctl start
+/usr/bin/upsd
+exec chpst -b nutd pause

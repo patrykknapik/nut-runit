@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+mkdir -p /run/nut
+touch /run/nut/upsmon.pid
+chown nut:nut /run/nut/upsmon.pid
+/usr/bin/upsmon
+exec chpst -b nutmon pause
+
